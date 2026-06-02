@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import meImage from '../assets/me1.jpeg'; 
 ---
 
 <Layout title="Meekbill — Software Designer">
@@ -15,9 +16,12 @@ import Header from '../components/Header.astro';
     ]}
   />
 
-  <!-- Rest of your homepage content -->
-  <figure>
-    <img src="/hero.jpg" alt="Meekbill" class="w-full h-auto rounded-sm" />
+  <figure class="flex justify-center pt-[120px] ">
+    <img 
+      src={meImage.src} 
+      alt="Meekbill" 
+      class="w-7/12 md:w-7/12 h-auto rounded-sm object-cover " 
+    />
   </figure>
 
 </Layout>
