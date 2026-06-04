@@ -1,0 +1,65 @@
+---
+interface Experience {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  highlights: string[];
+}
+
+interface Props {
+  experiences: Experience[];
+  education?: Array<{
+    institution: string;
+    degree: string;
+    location: string;
+    year: string;
+  }>;
+}
+
+const { experiences, education = [] } = Astro.props;
+---
+
+<section class="mt-12">
+  <h2 class="text-lg font-semibold tracking-tight mb-6">Experience</h2>
+  
+  <div class="space-y-8">
+    {experiences.map((exp) => (
+      <article class="border-l-2 border-neutral-200 dark:border-neutral-800 pl-4">
+        <header class="mb-2">
+          <h3 class="font-medium text-base">{exp.role}</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400">
+            {exp.company} · {exp.location}
+          </p>
+          <p class="text-xs text-neutral-500 mt-0.5">{exp.period}</p>
+        </header>
+        
+        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1.5 mt-3">
+          {exp.highlights.map((item) => (
+            <li class="flex gap-2">
+              <span class="text-neutral-400 mt-0.5">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+
+  {education.length > 0 && (
+    <div class="mt-12">
+      <h2 class="text-lg font-semibold tracking-tight mb-6">Education</h2>
+      <div class="space-y-4">
+        {education.map((edu) => (
+          <div class="border-l-2 border-neutral-200 dark:border-neutral-800 pl-4">
+            <h3 class="font-medium text-sm">{edu.degree}</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              {edu.institution} · {edu.location}
+            </p>
+            <p class="text-xs text-neutral-500 mt-0.5">{edu.year}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</section>

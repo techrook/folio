@@ -2,7 +2,71 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import meImage from '../assets/me1.jpeg'; 
+import Career from '../components/Career.astro';
+
+const experiences = [
+  {
+    company: "Peach Blossom",
+    role: "Backend Engineer",
+    location: "Remote",
+    period: "Oct 2024 - Oct 2025",
+    highlights: [
+      "Part of 6-person team developing digital transcript and school management system",
+      "Designed microservice architecture for student records, improving data consistency",
+      "Built queue-based batch processing service for large-scale student record uploads"
+    ]
+  },
+  {
+    company: "Freelancing",
+    role: "Software Engineer",
+    location: "Remote",
+    period: "2023 - Present",
+    highlights: [
+      "Kervv: Built job marketplace with NestJS, TypeScript, MongoDB and JWT auth",
+      "RightTimeEntertainment: Developed RESTful API for media management dashboard",
+      "Implemented role-based permissions and secure admin endpoints"
+    ]
+  },
+  {
+    company: "Envoice",
+    role: "Software Engineer",
+    location: "Kano",
+    period: "Jan 2025 - Present",
+    highlights: [
+      "Developed SaaS for online vendors to create shareable invoices",
+      "Implemented event-driven architecture with NestJS, BullMQ, and Redis",
+      "Created comprehensive API documentation using Swagger"
+    ]
+  },
+  {
+    company: "Shamrock Innovation",
+    role: "Web Developer Intern",
+    location: "Kano, Nigeria",
+    period: "Dec 2022 - May 2023",
+    highlights: [
+      "Built responsive UI for organizational health application using React and Tailwind",
+      "Developed RESTful APIs with Node.js to support application features"
+    ]
+  }
+];
+
+const education = [
+  {
+    institution: "Bayero University Kano",
+    degree: "BSc Cyber Security",
+    location: "Kano, Nigeria",
+    year: "May 2024"
+  },
+  {
+    institution: "Altschool of Engineering",
+    degree: "Diploma, Backend Engineering",
+    location: "Remote",
+    year: "Jun 2023"
+  }
+];
 ---
+
+
 
 <Layout title="Meekbill — Software Designer">
   
@@ -16,12 +80,26 @@ import meImage from '../assets/me1.jpeg';
     ]}
   />
 
-  <figure class="flex justify-center pt-[120px] ">
+  <figure class="flex justify-center pt-[60px] ">
     <img 
       src={meImage.src} 
       alt="Meekbill" 
-      class="w-7/12 md:w-7/12 h-auto rounded-sm object-cover " 
+      class=" md: h-auto rounded-sm object-cover " 
     />
   </figure>
+
+  <div>
+    <p class="pt-[60px]">
+      Kon'nichiwa, I'm Itohowo; a software Engineer with over 3 years of experience designing scalable, high-performance software
+      systems. . I am constantly learning and building what I wish existed.
+
+    </p>
+
+    <p class="pt-[30px]">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione perspiciatis aliquid eligendi nostrum, quod ipsum aliquam eum. Quam, laboriosam officia dolorum explicabo cum facere est ea neque exercitationem, accusamus porro.
+    </p>
+  </div>
+
+  <Career experiences={experiences} education={education} />
 
 </Layout>
