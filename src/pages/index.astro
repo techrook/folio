@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import meImage from '../assets/me1.jpeg'; 
 import Career from '../components/Career.astro';
+import Projects from '../components/Projects.astro';
 
 const experiences = [
   {
@@ -64,6 +65,34 @@ const education = [
     year: "Jun 2023"
   }
 ];
+
+const projects = [
+  {
+    title: "Envoice",
+    description: "SaaS platform enabling online vendors to create and share professional invoices with their clients. Features event-driven background processing for reliable invoice generation.",
+    tech: ["NestJS", "TypeScript", "MongoDB", "Redis", "BullMQ"],
+    github: "https://github.com/yourusername/envoice",
+    live: "https://envoice.app"
+  },
+  {
+    title: "Kervv",
+    description: "Job marketplace platform connecting employers with candidates. Includes full authentication system with role-based permissions and optimized database queries.",
+    tech: ["NestJS", "TypeScript", "MongoDB", "JWT"],
+    github: "https://github.com/yourusername/kervv"
+    // No live link - only GitHub will render
+  },
+  {
+    title: "RightTime Media API",
+    description: "RESTful API powering a media-focused web application with admin dashboard. Handles secure upload and management of audio and image files.",
+    tech: ["Node.js", "Express.js", "MongoDB"],
+    live: "https://righttime.example.com"
+  },
+  {
+    title: "iTranscript",
+    description: "Digital transcript and school management system built with microservice architecture. Includes batch processing for large-scale student record uploads.",
+    tech: ["Microservices", "Queue Systems", "Node.js"],
+  }
+];
 ---
 
 
@@ -101,5 +130,7 @@ const education = [
   </div>
 
   <Career experiences={experiences} education={education} />
+
+  <Projects projects={projects} />
 
 </Layout>
