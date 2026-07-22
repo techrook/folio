@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "start": "serve dist"
+    "start": "serve dist -p 3000"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
