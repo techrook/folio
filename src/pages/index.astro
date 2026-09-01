@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import meImage from '../assets/me1.jpeg'; 
 import Career from '../components/Career.astro';
 import Projects from '../components/Projects.astro';
+// Removed Footer import since it's already in Layout.astro
+import meImage from '../assets/me1.jpeg'; 
 
 const experiences = [
   {
@@ -79,7 +80,6 @@ const projects = [
     description: "Job marketplace platform connecting employers with candidates. Includes full authentication system with role-based permissions and optimized database queries.",
     tech: ["NestJS", "TypeScript", "MongoDB", "JWT"],
     github: "https://github.com/yourusername/kervv"
-    // No live link - only GitHub will render
   },
   {
     title: "RightTime Media API",
@@ -95,13 +95,11 @@ const projects = [
 ];
 ---
 
-
-
-<Layout title="Meekbill — Software Designer">
+<Layout title="Itohowo Monday — Software Engineer">
   
   <Header 
     name="Itohowo Monday" 
-    tagline="SWE"
+    tagline="Software Engineer<br />building scalable systems"
     links={[
       { text: "about", href: "/about" },
       { text: "projects", href: "/projects" },
@@ -109,28 +107,29 @@ const projects = [
     ]}
   />
 
-  <figure class="flex justify-center pt-[60px] ">
+  <!-- Fixed image classes: added w-full and md:w-1/2 -->
+  <figure class="flex justify-center mt-8">
     <img 
       src={meImage.src} 
-      alt="Meekbill" 
-      class=" md: h-auto rounded-sm object-cover " 
+      alt="Itohowo Monday" 
+      class="w-full md:w-1/2 h-auto rounded-sm object-cover" 
     />
   </figure>
 
-  <div>
-    <p class="pt-[60px]">
-      Kon'nichiwa, I'm Itohowo; a software Engineer with over 3 years of experience designing scalable, high-performance software
-      systems. . I am constantly learning and building what I wish existed.
-
+  <!-- Replaced arbitrary pt-[60px] with standard Tailwind mt-16 and mt-8 -->
+  <div class="mt-16">
+    <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+      Kon'nichiwa, I'm Itohowo; a software engineer with over 3 years of experience designing scalable, high-performance software systems. I am constantly learning and building what I wish existed.
     </p>
 
-    <p class="pt-[30px]">
+    <p class="mt-8 text-neutral-700 dark:text-neutral-300 leading-relaxed">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione perspiciatis aliquid eligendi nostrum, quod ipsum aliquam eum. Quam, laboriosam officia dolorum explicabo cum facere est ea neque exercitationem, accusamus porro.
     </p>
   </div>
 
   <Career experiences={experiences} education={education} />
-
   <Projects projects={projects} />
+  
+  <!-- Footer removed from here, it's already in Layout.astro -->
 
 </Layout>

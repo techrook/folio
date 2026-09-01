@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css' 
+import '../styles/global.css'
+import Footer from '../components/Footer.astro'; // <-- Import it here
+
 interface Props {
   title: string;
 }
@@ -10,15 +12,18 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white antialiased">
+    
     <div class="max-w-2xl mx-auto px-4 sm:px-6 py-12">
-    <slot />
+      <slot />
+      
+      <!-- Add Footer here -->
+      <Footer /> 
     </div>
+
   </body>
 </html>
